@@ -62,24 +62,25 @@ public class Veiculo {
 		System.out.println("A velocidade do veiculo " + this.nome + " é " + this.velocidade +"km/h");
 	}
 	
-	public void mostraEstrada() {
+	public void capotamento() {
 		if(curva) {
-			System.out.println("Cuidado você está perto da curva, desacelere.");
+			if(this.velocidade >= 70 && this.curva) {
+				System.out.println("O veiculo " + this.nome + " capotou");
+			}else if(this.velocidade < 70 || this.velocidade > 20){
+				System.out.println("O veiculo " + this.nome + " está ficando rapido para a curva, desacelere!");
+			}else if(this.velocidade >0 || this.velocidade < 20) {		
+				System.out.println("O veiculo " + this.nome + " está parando!");
+			}else {
+				System.out.println("O veiculo " + this.nome + " está parado!");
+			}
+			
 		}else {
 			System.out.println("Você está em uma reta, mesmo assim cuidado!");
 		}
 	}
 
 	public void acelerar() {
-		if(this.velocidade >= 70 && this.curva) {
-			System.out.println("O veiculo " + this.nome + " capotou");
-		}else if(this.velocidade < 70 || this.velocidade > 20){
-			System.out.println("O veiculo " + this.nome + " está ficando rapido para a curva, desacelere!");
-		}else if(this.velocidade >0 || this.velocidade < 20) {		
-			System.out.println("O veiculo " + this.nome + " está parando!");
-		}else {
-			System.out.println("O veiculo " + this.nome + " está parado!");
-		}
+		System.out.println("O veiculo " + this.nome + " está acelerando");
 	}
 	
 	public void desacelerar() {
