@@ -1,6 +1,5 @@
 package POO_ex03;
 
-import jdk.internal.org.jline.utils.OSUtils;
 
 public class ContaCorrente {
 
@@ -73,20 +72,20 @@ public class ContaCorrente {
 
 	// outros metodos
 	public void mostraDeposito() {
-		System.out.print("Seu deposito foi de R$" + deposito + " foi efetuado com sucesso!");
+		System.out.print("Seu deposito foi de R$" + this.deposito + " foi efetuado com sucesso!");
 	}
 
 	public void mostraSaque() {
-		saldoAtual = deposito;
-		if (saque <= saldoAtual) {
-			System.out.print("Seu deposito foi de R$" + saque + " foi realizado com sucesso!");
+		this.saldoAtual = this.deposito;
+		if (this.saque <= this.saldoAtual) {
+			System.out.print("Seu deposito foi de R$" + this.saque + " foi realizado com sucesso!");
 		}else {
-			System.out.println("Saldo insuficiente, você tem: " + saldoAtual + "na conta!");
+			System.out.println("Saldo insuficiente, você tem: " + this.saldoAtual + "na conta!");
 		}
 	}
 	public void mostraSaldoAtual() {
-		saldoAtual = deposito - saque;
-		System.out.print("Seu saldo atual é de R$" + saldoAtual);
+		this.saldoAtual = this.deposito - this.saque;
+		System.out.print("Seu saldo atual é de R$" + this.saldoAtual);
 
 	}
 
